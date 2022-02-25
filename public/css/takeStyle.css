@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plaster', cursive;
+    font-size: 1.7em;
+    font-weight: bold;
+    
+}
+
+.header {
+    top: 0;
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to right bottom, rgba(15, 241, 211, 0.87), rgba(0, 0, 255, 0.897)),url(/img/brainConnectBG.jpg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.title {
+    text-align: center;
+    align-items: center;
+    top: 8%;
+    left:50%;
+    position: absolute;
+    color: rgba(255, 68, 0, 0.705);
+    font-size: 2em;
+    transform: translate(-50%, 0);
+}
+
+.sign-up {
+
+    height: 444px;
+    width: 300px;
+    padding: 11px;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    position: absolute;
+    top: 22%;
+    left:50%;
+    transform: translate(-50%, 0);
+    justify-content: center;
+    background-color: rgba(1, 1, 58, 0.842);
+
+}
+
+button {
+    margin: 18px;
+    padding: 5px;
+    color: rgb(123, 207, 235);
+    border-radius: 8px;
+    background-color: rgba(255, 68, 0, 0.705);
+}
+
+.btn {
+    color: rgba(255, 166, 0, 0.664);
+    border: none;
+    background-color: rgba(0, 0, 0, 0.191);
+}
+
+.btn:hover {
+    color: rgba(212, 5, 5, 0.698);
+}
+
+
+.username,
+.email,
+.password,
+.email-login,
+.password-login {
+    padding: 5px;
+    border: none;
+    margin: 16px;
+    border-radius: 8px;
+    font-size: .7em;
+}
+
+.hidden {
+    display: none
+}
+
+/* Styles for Main Backdrop/Nav Bar */
+
+.topBar {
+    position: relative;
+    width: 100vw;
+    height: 56px;
+    box-shadow: 12px, 20px, 2px, 12px rgb(255, 115, 0);
+    background-image: linear-gradient(to right bottom, rgba(15, 169, 241, 0.924), rgba(0, 0, 255, 0.657)), url(../img/brainConnectBG.jpg);
+    background-color: rgba(75, 99, 107, 0.493);
+    
+}
+
+.logo{
+    position: absolute;
+    margin: 1px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: blue;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 255, 0.774), orange);
+
+}
+
+.toName {
+    position: absolute;
+    margin: 5px;
+    
+    top: -9;
+    left: 56;
+    font-size: .5em;
+    color: rgba(255, 68, 0, 0.705)
+}
+
+.logoTitle {
+    position: absolute;
+    height: 36px;
+    width: 275px;
+    top: 5;
+    left: 56;
+    letter-spacing: 3px;
+    font-size: .5em;
+    padding: 5px;
+    color: rgb(200, 126, 99);
+    background-color: rgba(0, 0, 0, 0.068);
+    border-radius: 3px;
+}
+
+.profileArea {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 11%;
+    transform: translate(0%, -50%);
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+}
+
+/* Styles for Post and Dashboard */
+
+.postBox {
+    position: relative;
+    height: 122px;
+    width: 100vw;
+    display: block;
+    margin-top: 36px;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: 3px solid rgba(3, 4, 70, 0.089);
+}
+
+.titleBox {
+    position: absolute;
+    width: 21vw;
+    height: 44px;
+    top: 8%;
+    left: 18%;
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+    font-size: .7em;
+
+
+}
+
+.textBox {
+    position: absolute;
+    width: 42vw;
+    height: 44px;
+    top: 50%;
+    left: 50%;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+
+}
+
+.postDetails {
+    position: absolute;
+    top: 0;
+    border: 2px solid black;
+    height: 111px;
+    width: 63%;
+    padding: 8px;
+    border-radius: 8px;
+    transform: translate(-50%, 0);
+}
+
+.addPostBtn {
+    position: absolute;
+    bottom: 20;
+    right: -5;
+    color: blue;
+}
+
+.userIcon {
+    font-size: .5em;
+    padding: 5px;
+    position: absolute;
+    margin-top: 0;
+    height: 63px;
+    width: 63px;
+    background-color: rgba(0, 0, 255, 0.698);
+    border-radius: 50%;
+}
+
+/* Dashboard */
+.mainDisplay {
+    position: relative;
+}
+
+.dashboard {
+    display: block;
+    margin-top: 5%;
+    margin-left: 50%;
+    position: flex;
+    padding: 8px;
+    align-items: center;
+    transform: translate(-50%, 0%);
+    height: 86px;
+    width:60%;
+    border-radius: 8px;
+    border: 4px solid black;
+}

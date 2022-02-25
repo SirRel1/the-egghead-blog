@@ -1,0 +1,35 @@
+<section>
+    <h2>
+        {{#each takes as |take|}}
+        {{take.title}}
+        <hr>
+        {{take.description}}
+        <textarea></textarea>
+        {{/each}}
+    </h2>
+    <header>
+            <div class="makePost--container">
+                <div class="writePost">
+                    <input class="blogTitle" placeholder="Title" type="text">
+                    <input class="blogDetails" value="{{theUser}}:" placeholder="U know.." type="text">
+                    {{#if isMember}}
+                    <button class="createBtn">Create</button>
+                    {{/if}}
+                </div>
+                
+            </div>
+            <h1 class="latest">Recent</h1>
+            {{#each (reverse theTakes) as |blog|}}
+                <div class="newBlogs">
+                    <h2 class="bTitle">{{blog.title}}</h2>
+                    <p class="bDescript">{{blog.description}}  <br> 
+                    </p>
+                    {{!-- <button class="del" onclick=theDelete({{blog.id}}) name={{blog.id}}>Remove</button> --}}
+
+                </div>
+                {{/each}}
+        </header>
+        <footer>&copy;SirRel1</footer>
+   <script src="/js/newPost.js"></script>
+
+</section>
