@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 8080;
 
 const sess = {
 	cookie: {
+		secure: false,
+		httpOnly: false,
 		maxAge: 1000 * 60 * 60 * 2,
 		sameSite: true
 	},
