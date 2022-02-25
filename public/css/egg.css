@@ -127,6 +127,7 @@ footer{
     transform: translate(-50, 0);
     font-size: 1rem;
     margin-left: 38%;
+    bottom: 0;
 }
 
 .blogDetails {
@@ -188,7 +189,8 @@ footer{
 
 .latest{
     margin-left: 11%;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-top: 19px;
     border-left: 2px solid orange;
     padding: 5px;
 }
