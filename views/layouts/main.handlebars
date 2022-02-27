@@ -32,8 +32,8 @@
 
 				<ul class="nav">
 					<li><a href="/">Home</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
                     {{#if isMember}}
+                    <li><a href="/dashboard">Dashboard</a></li>
 					<li><button onclick=logout() class="logOff">Logout</button></li>
                     {{else}}
                     <li><a href="/login">Login</a></li>
