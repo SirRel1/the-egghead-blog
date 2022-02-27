@@ -100,7 +100,8 @@ router.post('/post', async (req, res) => {
     const newPost = await Takes.create({
 		user_id: req.body.user_id,
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+		created_at: req.body.created_at
     })
 
     res.status(200).json(newPost)

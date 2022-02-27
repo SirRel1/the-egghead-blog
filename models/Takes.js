@@ -14,6 +14,10 @@ Takes.init(
 		user_id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
+			// references: {
+			// 	model: 'usertakes',
+			// 	key: 'id',
+			// }
 			
 		},
 		title: {

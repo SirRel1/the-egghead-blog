@@ -168,8 +168,8 @@ footer{
     display: flex;
     flex-direction: column;
     margin-top: 4.3rem;
-    border: 3px solid black;
-    width: 68vw;
+    border: 3px solid rgba(0, 0, 0, 0.657);
+    width: 69vw;
     margin-left: 9rem;
     height: 30vh;
     box-shadow: 2px 3px 4px green;
@@ -180,6 +180,7 @@ footer{
     border-radius: .8rem;
     padding: .3rem;
     max-height: 25vh;
+    background-color: rgba(226, 206, 206, 0.301);
 }
 
 .newBlogs:hover{
@@ -256,7 +257,7 @@ footer{
     max-width: 1100px;
     margin: 5% auto;
     height: 80vh;
-    width: 85vw;
+    width: 90vw;
     border-radius: 12px;
     background-color: rgba(160, 98, 17, 0.082);
 }
@@ -273,14 +274,26 @@ footer{
     display: none;
 }
 
+.userCreatedAt{
+    display: none;
+}
+
+.timestamp{
+    position: absolute;
+    font-size: .8rem;
+    right: 11;
+    /* margin-left: 5%; */
+    color: rgb(32, 57, 182);
+}
+
 .userBlogs {
     position: relative;
     margin-bottom: 8px;
     display: flex;
     flex-direction: column;
     margin-top: 4.3rem;
-    border: 3px solid black;
-    width: 50vw;
+    border: 3px solid rgba(0, 0, 0, 0.596);
+    width: 63vw;
     margin-left: 1rem;
     height: 30vh;
     box-shadow: 2px 3px 4px rgb(0, 9, 128);
@@ -300,7 +313,7 @@ footer{
     background-color: rgba(3, 98, 3, 0.87);
     max-width: 4rem;
     margin-top: 1.2rem !important;
-    margin-left: 41rem;
+    margin-left: 52rem;
     border-radius: 10px;
     padding: 5px;
     color: white;
@@ -358,11 +371,11 @@ footer{
 @media(max-width:768px) {
 
     .bTitle{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .bDescript{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hamburger {
@@ -408,7 +421,7 @@ footer{
     }
 
     .newBlogs {
-        width: 86vw;
+        width: 88vw;
         margin-left: 6%;
         height: 33% !important;
     }
@@ -429,4 +442,85 @@ footer{
         border-left: 2px solid orange;
         padding: 5px;
     }
+
+    .edit{
+        position: absolute;
+        /* align-items: flex-end; */
+        justify-content: end;
+        background-color: rgba(3, 98, 3, 0.87);
+        max-width: 4rem;
+        margin-top: 8.9rem !important;
+        margin-left: 13.8rem;
+        border-radius: 10px;
+        padding: 5px;
+        color: white;
+    }
+
+    .del {
+        position: absolute;
+        left: 0;
+        max-width: 4rem;
+        margin-top: 8.9rem !important;
+        margin-left: 1rem;
+        border-radius: 10px;
+        background-color: red;
+        padding: 5px;
+        color: white;
+    }
+
+    .timestamp{
+        position: absolute;
+        font-size: .5rem;
+        right: 11;
+        margin-top: -3%;
+        color: rgb(32, 57, 182);
+    }
+
+    .userBlogs {
+        position: relative;
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 4.3rem;
+        border: 3px solid rgba(0, 0, 0, 0.596);
+        width: 80vw;
+        margin-left: 1rem;
+        height: 30vh;
+        box-shadow: 2px 3px 4px rgb(0, 9, 128);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: .8rem;
+        padding: .3rem;
+        max-height: 25vh;
+    }
+
+    .theEditTitle{
+        border-radius: 9px;
+        width: 36vw;
+        height: 2.2rem;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.4rem;
+        display: block;
+        margin-top: 5%;
+        padding: 3px;
+        
+    }
+    
+    .theEditDescription{
+        padding: 3px;
+        font-size: 1.2rem;
+        border-radius: 9px;
+        width: 77vw;
+        font-family: 'Times New Roman', Times, serif;
+        animation: slide;
+        animation-duration: .5ms;
+    
+    }
+
+    .hide{
+        display: none;
+    }
+    
 }

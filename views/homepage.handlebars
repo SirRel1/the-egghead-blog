@@ -12,7 +12,7 @@
             <h1 class="latest">Recent</h1>
             {{#each (reverse theTakes) as |blog|}}
                 <div class="newBlogs">
-                    <h2 class="bTitle">{{blog.title}}</h2>
+                    <h2 class="bTitle">{{blog.title}}<span class="timestamp">@{{format_time blog.createdAt }}</span></h2>
                     <p class="bDescript">{{blog.description}}  <br> 
                     </p>
                     {{!-- <button class="del" onclick=theDelete({{blog.id}}) name={{blog.id}}>Remove</button> --}}

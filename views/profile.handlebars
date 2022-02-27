@@ -3,6 +3,7 @@
     <div class="makePost--container">
                 <div class="writePost">
                     <input class="userId" value="{{theUserId}}">
+                    <input class="userCreatedAt" value="{{format_time}}">
                     <input class="blogTitle" placeholder="Title" type="text">
                     <input class="blogDetails" placeholder="What's Crackin'.." type="text">
                     {{#if isMember}}
@@ -23,7 +24,7 @@
         
             {{#each (reverse userTakes) as |blog|}}
                 <div class="userBlogs">
-                    <h2 class="bTitle">{{blog.title}}</h2>
+                    <h2 class="bTitle">{{blog.title}}<span class="timestamp">@{{format_time blog.createdAt }}</span></h2>
                     <p class="bDescript">{{blog.description}}  <br> 
                     </p>
                     <button class="edit" onclick=theEdit({{blog.id}}) name={{blog.id}}>Edit</button>

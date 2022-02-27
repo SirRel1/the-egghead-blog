@@ -13,10 +13,11 @@ const takeTake = async () => {
     const description = document.querySelector('.blogDetails').value;
     const title = document.querySelector('.blogTitle').value;
     const user_id = document.querySelector('.userId').value;
-    if (user_id && description && title) {
+    const created_at= document.querySelector('.userCreatedAt').value;
+    if (user_id && description && title && created_at) {
         const response = await fetch('/api/users/post', {
             method: 'POST',
-            body: JSON.stringify({ user_id, title, description }),
+            body: JSON.stringify({ user_id, title, description, created_at }),
             headers: {'Content-Type': 'application/json'}
         })
         .then(() => {

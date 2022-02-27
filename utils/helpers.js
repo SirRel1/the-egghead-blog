@@ -7,9 +7,9 @@ const reverse = ('reverseArray', (array) => array.reverse())
 
 
 module.exports = {
-    format_time: () => {
+    format_time: (a) => {
      
-      return moment().format('YYYY');
+      return moment(a).format('llll');
       
     },
 
