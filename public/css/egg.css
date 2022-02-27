@@ -472,6 +472,7 @@ footer{
         position: absolute;
         font-size: .5rem;
         right: 11;
+        bottom: 2;
         margin-top: -3%;
         color: rgb(32, 57, 182);
     }
