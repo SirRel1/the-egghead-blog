@@ -53,6 +53,7 @@ router.post('/register', async (req, res) => {
 		req.session.save(() => {
 			req.session.isMember = true
 			req.session.user = req.body.username
+			req.session.userId = cleanUser.id;
 		})
 		res.status(200).send("Enter");
 	} catch (err) {
@@ -73,6 +74,7 @@ router.post('/login', async (req, res) => {
 		req.session.save(() => {
 			req.session.isMember = true;
 			req.session.user = cleanUserLogin.username;
+			req.session.userId = cleanUserLogin.id;
 		})
 
 		if (!cleanUserLogin) {
@@ -96,6 +98,7 @@ router.post('/login', async (req, res) => {
 // Recieve new post and persist the data into the database.
 router.post('/post', async (req, res) => {
     const newPost = await Takes.create({
+		user_id: req.body.user_id,
         title: req.body.title,
         description: req.body.description
     })
@@ -113,6 +116,34 @@ router.delete('/post/:id', async (req, res) => {
     })
 
     res.status(200).json(newPost)
+})
+
+
+router.get('/post/:id', async (req, res) => {
+    const selectPost = await Takes.findOne({
+        where: {
+			id: req.params.id
+		}
+    })
+	const cleanBlog = await selectPost.get({ plain: true });
+	
+	
+    return res.status(200).json({cleanBlog})
+})
+
+
+router.put('/post/:id', async (req, res) => {
+    const newPost = await Takes.update({
+		user_id: req.session.userId, 
+		title: req.body.title,
+		description: req.body.description},
+		{ where: {
+			id: req.params.id
+		},
+        
+		})
+
+    res.status(200).json({newPost})
 })
 
 router.post('/logout', (req, res) => {

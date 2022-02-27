@@ -1,6 +1,40 @@
 <section>
-    <div>
-        This is the profile page!
-    </div>
+    <h1 class="dash">{{theUser}}'s Dashboard</h1>
+    <div class="makePost--container">
+                <div class="writePost">
+                    <input class="userId" value="{{theUserId}}">
+                    <input class="blogTitle" placeholder="Title" type="text">
+                    <input class="blogDetails" placeholder="What's Crackin'.." type="text">
+                    {{#if isMember}}
+                    <button class="createBtn" onclick="takeTake()">Create</button>
+                    {{/if}}
+                </div>
+                
+                
+            </div>
 
+            <div class="recentPost">Your Recent Post...
+                <header>
+                    
+                    <textarea class="hide theEditTitle" id="{{theUserId}}" cols="30" rows="10"></textarea>
+                    <textarea class="hide theEditDescription" id="{{theUserId}}" cols="30" rows="10"></textarea>
+                   
+                    
+        
+            {{#each (reverse userTakes) as |blog|}}
+                <div class="userBlogs">
+                    <h2 class="bTitle">{{blog.title}}</h2>
+                    <p class="bDescript">{{blog.description}}  <br> 
+                    </p>
+                    <button class="edit" onclick=theEdit({{blog.id}}) name={{blog.id}}>Edit</button>
+                    <button class="del" onclick=theDelete({{blog.id}}) name={{blog.id}}>Remove</button>
+                   
+
+                </div>
+                {{/each}}
+        </header>
+
+            </div>
+            
+<script src="/js/newPost.js"></script>
 </section>

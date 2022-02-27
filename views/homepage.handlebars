@@ -8,16 +8,7 @@
         {{/each}}
     </h2>
     <header>
-            <div class="makePost--container">
-                <div class="writePost">
-                    <input class="blogTitle" placeholder="Title" type="text">
-                    <input class="blogDetails" value="{{theUser}}:" placeholder="U know.." type="text">
-                    {{#if isMember}}
-                    <button class="createBtn">Create</button>
-                    {{/if}}
-                </div>
-                
-            </div>
+            
             <h1 class="latest">Recent</h1>
             {{#each (reverse theTakes) as |blog|}}
                 <div class="newBlogs">
@@ -30,6 +21,6 @@
                 {{/each}}
         </header>
         <footer>&copy;SirRel1</footer>
-   <script src="/js/newPost.js"></script>
+   
 
 </section>

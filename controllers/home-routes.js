@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const Takes = require('../models/Takes.js');
+const Takes  = require('../models/Takes');
+const Users = require('../models/takeUsers');
+const User = require('../models/takeUsers');
 
 // Render the Main page of Takes.
 router.get('/', async (req, res) => {
@@ -44,11 +46,29 @@ router.get('/login', async (req, res) => {
 });
 
 
-// Render profile page when the user is signed in and clicks loge.
+// Render dashboard page when the user is signed in and clicks loge.
 
-router.get('/profile', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
+	const dbTakesData = await Takes.findAll({
+		where: {
+			user_id: req.session.userId
+		}
+	});
+	// const dbUserId = await User.findByPk(
+	// 	req.session.userId
+		
+	// );
+	// setTimeout(() => {console.log("User Takes:",dbTakesData)}, 3000)
+	const userTakes = dbTakesData.map((blog) => blog.get({ plain: true }));
+	
 	try {
-		res.render('profile');
+		res.render('profile', {
+			isMember: req.session.isMember,
+			userTakes,
+			theUserId: req.session.userId,
+			theUser: req.session.user,
+			
+		});
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
