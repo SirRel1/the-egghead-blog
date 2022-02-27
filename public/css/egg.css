@@ -519,6 +519,15 @@ footer{
     
     }
 
+    .createBtn {
+        border-radius: 8px;
+        padding: 5px;
+        color: brown;
+        margin-top: -1%;
+        box-shadow: 1px 2px 4px ;
+        background-color: rgba(0, 110, 255, 0.541) ;
+    }
+
     .hide{
         display: none;
     }
