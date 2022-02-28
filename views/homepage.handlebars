@@ -15,12 +15,13 @@
                     <h2 class="bTitle">{{blog.title}}<span class="timestamp">@{{format_time blog.createdAt }}</span></h2>
                     <p class="bDescript">{{blog.description}}  <br> 
                     </p>
-                    {{!-- <button class="del" onclick=theDelete({{blog.id}}) name={{blog.id}}>Remove</button> --}}
-
+                    <p class="theUserName"><span class="postedBy">posted by: </span>{{blog.usertake.username}}</p>
+                    <img onclick="makeComment({{blog.id}})" class="commentBubble"  src="/img/two-speech-bubbles.png" alt="">
+                    <input class="hide commentArea" id="{{blog.id}}" placeholder="Comment Here..." type="text">
                 </div>
                 {{/each}}
         </header>
         <footer>&copy;SirRel1</footer>
    
-
+<script src="/js/nuComment.js"></script>
 </section>

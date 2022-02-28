@@ -1,13 +1,16 @@
-// const Takes = require('./Takes')
-// const Users = require('./takeUsers')
+const Takes = require('./Takes')
+const Users = require('./takeUsers')
 
 
-// Takes.belongsTo(Users, {
-//     foreignKey: 'user_id',
-//     onDelete: 'cascade'
-//   });
+Users.hasMany(Takes);
 
-//   module.exports = {
-//       Takes,
-//       Users
-//   }
+Takes.belongsTo(Users, {
+    foreignKey: 'user_id',
+    onDelete: 'cascade'
+
+})
+
+  module.exports = {
+      Takes,
+      Users
+  }

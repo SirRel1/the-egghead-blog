@@ -1,19 +1,33 @@
 const router = require('express').Router();
-const takeUsers = require('../../models/takeUsers.js');
-const Takes = require('../../models/Takes.js');
+// const takeUsers = require('../../models/takeUsers.js');
+// const Takes = require('../../models/Takes.js');
+const { Takes, Users } = require('../../models')
 const bcrypt = require('bcrypt');
 
 // Get all Users from the database.
 
 router.get('/', async (req, res) => {
-	const allUsers = await takeUsers.findAll({});
+	const allUsers = await Users.findAll({});
 
 	res.status(200).json(allUsers);
 });
 
+router.get('/post/:id', async (req, res) => {
+    const selectPost = await Takes.findOne({
+        where: {
+			id: req.params.id
+		},
+		include: [{model: Users }]
+    })
+	const cleanBlog = await selectPost.get({ plain: true });
+	
+	
+    return res.status(200).json({cleanBlog})
+})
+
 // Get User by Id
 router.get('/:id', async (req, res) => {
-	const idUser = await takeUsers.findOne({
+	const idUser = await Users.findOne({
 		where: {
 			id: req.params.id,
 		},
@@ -44,7 +58,7 @@ router.post('/register', async (req, res) => {
 	const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
 	try {
-		const dbUserData = await takeUsers.create({
+		const dbUserData = await Users.create({
 			username: req.body.username,
 			email: req.body.email,
 			password: hashedPassword,
@@ -65,7 +79,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
 	try {
-		const userExist = await takeUsers.findOne({
+		const userExist = await Users.findOne({
 			where: {
 				email: req.body.email,
 			},
@@ -117,19 +131,6 @@ router.delete('/post/:id', async (req, res) => {
     })
 
     res.status(200).json(newPost)
-})
-
-
-router.get('/post/:id', async (req, res) => {
-    const selectPost = await Takes.findOne({
-        where: {
-			id: req.params.id
-		}
-    })
-	const cleanBlog = await selectPost.get({ plain: true });
-	
-	
-    return res.status(200).json({cleanBlog})
 })
 
 
