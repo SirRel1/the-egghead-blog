@@ -9,7 +9,7 @@ const reverse = ('reverseArray', (array) => array.reverse())
 module.exports = {
     format_time: (a) => {
      
-      return moment(a).format('llll');
+      return moment(a).fromNow(); moment(a).format('llll');
       
     },
 
