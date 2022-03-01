@@ -549,6 +549,25 @@ footer{
         max-height: 25vh;
     }
 
+    .postedBy{
+        font-size: .7rem;
+        margin-left: -111%;
+        color: rgba(82, 74, 48, 0.945);
+    }
+
+    .theUserName{
+    position: absolute;
+    border: none;
+    color: rgb(19, 148, 37);
+    top: 11;
+    font-size: .9rem;
+    font-style: italic;
+    margin-left: 81%;
+    background-color: transparent;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+}
+
     .theEditTitle{
         border-radius: 9px;
         width: 36vw;

@@ -3,6 +3,7 @@ const router = require('express').Router();
 // const Users = require('../models/takeUsers');
 const { Users, Takes, Comments } = require('../models')
 
+
 // Render the Main page of Takes.
 router.get('/', async (req, res) => {
 	try {
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 		});
 
 		const theTakes = dbTakesData.map((blog) => blog.get({ plain: true }));
-		console.log(dbCommentsData)
+		// console.log(dbCommentsData)
 
 		res.render('homepage', {
 			theTakes,

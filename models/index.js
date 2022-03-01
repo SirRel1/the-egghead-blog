@@ -1,6 +1,7 @@
 const Takes = require('./Takes')
 const Users = require('./takeUsers')
 const Comments = require('./Comments')
+const sequelize = require('../config/connection')
 
 
 Users.hasMany(Takes);
@@ -11,9 +12,14 @@ Takes.belongsTo(Users, {
 
 });
 
-Takes.hasMany(Comments);
 
-Comments.belongsTo(Takes);
+Takes.belongsToMany(Comments, {
+    through: 'Take_Comments'
+});
+
+Comments.belongsTo(Takes, {
+    through: 'Take_Comments'
+});
 
 Users.hasMany(Comments);
 
