@@ -134,7 +134,7 @@ footer{
     display: flex;
     word-spacing: 12%;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 200;
     width: 64vw;
     margin: 5px;
@@ -200,7 +200,7 @@ footer{
     position: absolute;
     right: 0;
     max-width: 4rem;
-    margin-top: 1.1rem !important;
+    margin-top: 2.5rem !important;
     /* margin-left: 23rem; */
     border-radius: 10px;
     background-color: red;
@@ -215,15 +215,20 @@ footer{
 
 .bTitle {
     color: rgb(1, 1, 141);
+    font-size: 1.8rem;
     border-bottom: .1rem solid rgb(223, 17, 17);
+}
+
+.bDescript{
+    font-size: 1rem;
 }
 
 .theUserName{
     position: absolute;
     border: none;
     color: rgb(19, 148, 37);
-    top: 27;
-    font-size: 1.4rem;
+    top: 22.2;
+    font-size: 1.2rem;
     font-style: italic;
     margin-left: 81%;
     background-color: transparent;
@@ -279,7 +284,10 @@ footer{
     justify-content: space-evenly;
 }
 
-.userId{
+.userId,
+.blogUserName,
+.blogId
+{
     display: none;
 }
 
@@ -338,13 +346,25 @@ footer{
    border-radius: 8px;
 }
 
+.commentTheBtn{
+    position: absolute;
+    z-index: 3;
+    width: 51px;
+    border-radius: 11px;
+    margin-left: 80.8%;
+    margin-top: 11%;
+    color: rgb(32, 168, 66);
+    padding: 3px;
+    margin-right: 5%;
+}
+
 .edit{
     position: absolute;
     align-items: flex-end;
     justify-content: end;
     background-color: rgba(3, 98, 3, 0.87);
     max-width: 4rem;
-    margin-top: 1.2rem !important;
+    margin-top: 2.5rem !important;
     margin-left: 52rem;
     border-radius: 10px;
     padding: 5px;

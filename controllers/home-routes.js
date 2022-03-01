@@ -1,20 +1,26 @@
 const router = require('express').Router();
 // const Takes  = require('../models/Takes');
 // const Users = require('../models/takeUsers');
-const { Users, Takes } = require('../models')
+const { Users, Takes, Comments } = require('../models')
 
 // Render the Main page of Takes.
 router.get('/', async (req, res) => {
 	try {
+		const dbCommentsData = await Comments.findAll({
+			include: [{model: Takes}]
+		})
 		const dbTakesData = await Takes.findAll({
-			include: [{model: Users }],
+			include: [{model: Users }, {model: Comments}],
 			
 		});
 
 		const theTakes = dbTakesData.map((blog) => blog.get({ plain: true }));
+		console.log(dbCommentsData)
 
 		res.render('homepage', {
 			theTakes,
+			dbCommentsData,
+			user_id: req.body.user_id,
 			isMember: req.session.isMember,
 			theUser: req.session.user
 		});

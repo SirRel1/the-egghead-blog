@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // const takeUsers = require('../../models/takeUsers.js');
 // const Takes = require('../../models/Takes.js');
-const { Takes, Users } = require('../../models')
+const { Takes, Users, Comments } = require('../../models')
 const bcrypt = require('bcrypt');
 
 // Get all Users from the database.
@@ -119,6 +119,19 @@ router.post('/post', async (req, res) => {
     })
 
     res.status(200).json(newPost)
+})
+
+// Recieve and create comments from and to Users
+router.post('/comments', async (req, res) => {
+    const newComment = await Comments.create({
+		user_id: req.body.user_id,
+        to_whom: req.body.to_whom,
+        to_what: req.body.to_what,
+        description: req.body.description
+    })
+	const cleanComments = await newComment.get({ plain: true });
+
+    res.status(200).json(cleanComments)
 })
 
 // Delete the blog selected by the user
