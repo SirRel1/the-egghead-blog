@@ -1,3 +1,5 @@
+document.querySelector('.email').select();
+
 const signupFormHandler = async (e) => {
 	e.preventDefault();
 

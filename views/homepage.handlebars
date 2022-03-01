@@ -17,19 +17,21 @@
                     </p>
                     <p class="theUserName"><span class="postedBy">posted by: </span>{{blog.usertake.username}}</p>
                     <img onclick="makeComment({{blog.id}})" class="commentBubble"  src="/img/two-speech-bubbles.png" alt="">
-                    <input class="hide commentArea" id="theComment{{blog.id}}" placeholder="Comment Here..." type="text">
+                    <label class="userComments"><span class="userCommentsLabel"><button class="vuCommentsBtn" onclick="vuComs({{blog.id}})">Comments({{comments.length}})</button></span><br>    
+                    <input class="hide commentArea" id="theComment{{blog.id}}" placeholder="Replying to: {{blog.usertake.username}}" type="text">
+                    </label>
                     <input class="userId" value="{{user_id}}">
+                    <input class="commentUserName" value="{{../theUser}}">
                     <input class="blogId" value="{{blog.id}}">
                     <input class="blogUserName" id="blogUserName{{blog.id}}" value="{{blog.usertake.username}}">
+                    {{#if ../isMember}}
                     <input class="hide commentTheBtn" id="theBtn{{blog.id}}" type="SUBMIT" onclick="makeAComment({{blog.id}})">
+                    {{/if}}
+                    <div class="hide commentsBox" id="showComs{{blog.id}}"><p class="userComments">{{#with blog}} {{#each comments}} {{comment_username}}: <span class="commentDescript">{{description}}</span><br> {{/each}} {{/with}}</p></div>
                 </div>
                 {{/each}}
         </header>
-        <main>
-            {{#each dbCommentsData as |comments|}}
-            <p>{{comments.dataValues.description}}</p>
-            {{/each}}
-        </main>
+       
         <footer>&copy;SirRel1</footer>
    
 <script src="/js/nuComment.js"></script>

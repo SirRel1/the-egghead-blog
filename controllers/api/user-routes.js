@@ -127,7 +127,8 @@ router.post('/comments', async (req, res) => {
 		user_id: req.body.user_id,
         to_whom: req.body.to_whom,
         to_what: req.body.to_what,
-        description: req.body.description
+        description: req.body.description,
+		comment_username: req.body.comment_username
     })
 	const cleanComments = await newComment.get({ plain: true });
 

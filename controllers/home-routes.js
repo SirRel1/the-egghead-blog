@@ -7,20 +7,16 @@ const { Users, Takes, Comments } = require('../models')
 // Render the Main page of Takes.
 router.get('/', async (req, res) => {
 	try {
-		const dbCommentsData = await Comments.findAll({
-			include: [{model: Takes}]
-		})
 		const dbTakesData = await Takes.findAll({
 			include: [{model: Users }, {model: Comments}],
 			
 		});
 
 		const theTakes = dbTakesData.map((blog) => blog.get({ plain: true }));
-		// console.log(dbCommentsData)
+		// console.log(theTakes[0].comments[0].description)
 
 		res.render('homepage', {
 			theTakes,
-			dbCommentsData,
 			user_id: req.body.user_id,
 			isMember: req.session.isMember,
 			theUser: req.session.user

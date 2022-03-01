@@ -1,4 +1,5 @@
 let theButton = document.querySelector('.btn');
+document.querySelector('.email-login').select();
 
 const loginFormHandler = async (e) => {
 	e.preventDefault();

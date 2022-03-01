@@ -171,7 +171,7 @@ footer{
     border: 3px solid rgba(0, 0, 0, 0.657);
     width: 69vw;
     margin-left: 9rem;
-    height: 30vh;
+    height: 35vh;
     box-shadow: 2px 3px 4px green;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -179,7 +179,7 @@ footer{
     text-overflow: ellipsis;
     border-radius: .8rem;
     padding: .3rem;
-    max-height: 25vh;
+    max-height: 33vh;
     background-color: rgba(226, 206, 206, 0.301);
 }
 
@@ -241,6 +241,76 @@ footer{
     color: rgba(82, 74, 48, 0.945);
 }
 
+/* The name of the user who made the comments */
+.userComments{
+    position: absolute;
+    font-size: .8rem;
+    left: 50%;
+    bottom: 25;
+    margin-top: 5px;
+    color: rgba(2, 119, 2, 0.965);
+    transform: translate(-50%, 0);
+
+}
+
+.vuCommentsBtn{
+
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: rgba(73, 66, 3, 0.883);
+
+}
+
+.vuCommentsBtn:hover{
+
+    border: none;
+    color: rgba(240, 224, 4, 0.917);
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: rgba(73, 66, 3, 0.883);
+
+}
+
+.userCommentsLabel{
+    position: absolute;
+    font-size: .9rem;
+    left: 50%;
+    bottom: -41;
+    margin-top: -5%;
+    transform: translate(-50%, 0);
+
+}
+
+.commentsBox{
+    padding: 8px;
+    line-height: 122%;    
+}
+
+.commentDescript{
+    
+    color: rgba(1, 69, 158, 0.828);
+    border: 2px solid rgba(0, 0, 0, 0.301);
+    border-radius: 8px;
+    margin-left: -.7%;
+    max-width: 70vw;
+    background-color: rgba(173, 149, 10, 0.294);
+    padding: 2px;
+    animation-name: show;
+    animation-duration: .3ms ease-in-out;
+    transition: all;
+}
+
+@keyframes show {
+    from {
+        text-shadow: 0 0 20px #f02512;
+    }
+    to {
+        text-shadow: 0 0 30px #2d9da9  0 0 10px;
+    }
+    
+}
+
 .userLog{
     color: orange;
 }
@@ -285,6 +355,7 @@ footer{
 }
 
 .userId,
+.commentUserName,
 .blogUserName,
 .blogId
 {
@@ -341,8 +412,9 @@ footer{
    width: 50vw;
    left: 50%;
    transform: translate(-50%, 0);
-   height: 11vh;
-   margin-top: 50%; 
+   height: 10vh;
+   margin-top: 50%;
+   margin-bottom: 5px; 
    border-radius: 8px;
 }
 
@@ -352,7 +424,7 @@ footer{
     width: 51px;
     border-radius: 11px;
     margin-left: 80.8%;
-    margin-top: 11%;
+    margin-top: 14%;
     color: rgb(32, 168, 66);
     padding: 3px;
     margin-right: 5%;

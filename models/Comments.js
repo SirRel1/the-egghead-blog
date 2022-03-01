@@ -20,6 +20,15 @@ Comments.init(
 			}
 			
 		},
+		comment_username: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			// references: {
+			// 	model: 'usertakes',
+			// 	key: 'username',
+			// }
+			
+		},
 		to_whom: {
 			type: DataTypes.STRING,
 			allowNull: false,
