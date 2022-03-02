@@ -1,7 +1,20 @@
-
 let count = 0;
+// work on this--->>>!!!Button disable/enable shall be conquered!
+let id = document.querySelector('.blogId').value;
 
-let aNuComment = document.querySelector(`.commentArea`)
+let aNuComment = document.getElementById(`theComment${id}`);
+let button = document.getElementById(`theBtn${id}`);
+button.disabled = true; //setting button state to disabled
+// Disable button if no content
+aNuComment.addEventListener('keyup', () => {
+    console.log(button, id)
+     if (document.getElementById(`theComment${id}`).value === "") {
+            button.disabled = true; //button remains disabled
+        } else {
+            button.disabled = false; //button is enabled
+        }
+})
+       
 
 
 
@@ -42,7 +55,6 @@ function makeComment (id) {
         })
         
     }
-
 } 
 
 function vuComs (id) {
