@@ -65,7 +65,7 @@ router.get('/dashboard', async (req, res) => {
 	// );
 	// setTimeout(() => {console.log("User Takes:",dbTakesData)}, 3000)
 	const userTakes = dbTakesData.map((blog) => blog.get({ plain: true }));
-	console.log("User Takes:", userTakes)
+
 	
 	try {
 		res.render('profile', {

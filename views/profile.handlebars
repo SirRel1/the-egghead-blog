@@ -4,8 +4,8 @@
                 <div class="writePost">
                     <input class="userId" value="{{theUserId}}">
                     <input class="userCreatedAt" value="{{format_time}}">
-                    <input class="blogTitle" placeholder="Title" type="text">
-                    <input class="blogDetails" placeholder="What's Crackin'.." type="text">
+                    <input class="blogTitle" maxlength="22" placeholder="Title" type="text">
+                    <input class="blogDetails" maxlength="129" placeholder="What's Crackin'.." type="text">
                     {{#if isMember}}
                     <button class="createBtn" onclick="takeTake()">Create</button>
                     {{/if}}

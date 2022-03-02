@@ -27,7 +27,7 @@
                     {{#if ../isMember}}
                     <input class="hide commentTheBtn" id="theBtn{{blog.id}}" type="SUBMIT" onclick="makeAComment({{blog.id}})">
                     {{/if}}
-                    <div class="hide commentsBox" id="showComs{{blog.id}}"><p class="userComments">{{#with blog}} {{#each comments}} {{comment_username}}: <span class="commentDescript">{{description}}</span><br> {{/each}} {{/with}}</p></div>
+                    <div class="hide commentsBox" id="showComs{{blog.id}}"><p class="userComments">{{#with blog}} {{#each (reverse comments)}} {{comment_username}}: <span class="commentDescript">{{description}}</span><br> {{/each}} {{/with}}</p></div>
                 </div>
                 {{/each}}
         </header>
