@@ -284,7 +284,8 @@ footer{
 
 .commentsBox{
     padding: 8px;
-    line-height: 122%;    
+    line-height: 122%; 
+    overflow: auto;   
 }
 
 .commentDescript{
@@ -293,7 +294,7 @@ footer{
     border: 2px solid rgba(0, 0, 0, 0.301);
     border-radius: 8px;
     margin-left: -.7%;
-    max-width: 70vw;
+    max-width: 100vw;
     background-color: rgba(173, 149, 10, 0.294);
     padding: 2px;
     animation-name: show;
@@ -545,8 +546,8 @@ footer{
     }
 
     .newBlogs {
-        width: 88vw;
-        margin-left: 6%;
+        width: 95.5vw;
+        margin-left: 2.5%;
         height: 33% !important;
     }
 
@@ -661,6 +662,43 @@ footer{
         animation: slide;
         animation-duration: .5ms;
     
+    }
+
+    .commentsBox{
+        padding: 8px;
+        line-height: 122%; 
+        overflow: auto; 
+        width: 69vw;
+        align-items: center;
+        justify-content: center; 
+        height: 91vh;
+        border-radius: 12px;
+        margin-left: 12%;
+        margin-top: -19%;
+        background-color: rgba(223, 210, 210, 0.863); 
+    }
+
+    .userComments{
+        position: absolute;
+        font-size: .6rem;
+        left: 50%;
+        bottom: 25;
+        width: 68vw;
+        margin-top: 5px;
+        color: rgba(2, 119, 2, 0.965);
+        transform: translate(-50%, 0);
+    
+    }
+    
+    .commentDescript{
+        
+        color: rgba(1, 69, 158, 0.828);
+        border: 2px solid rgba(0, 0, 0, 0.301);
+        border-radius: 8px;
+        margin-left: -.5%;
+        max-width: 100vw;
+        background-color: rgba(173, 149, 10, 0.294);
+        padding: 2px;
     }
 
     .createBtn {
