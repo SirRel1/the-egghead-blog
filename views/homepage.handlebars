@@ -16,7 +16,7 @@
                     <p class="bDescript">{{blog.description}}  <br> 
                     </p>
                     <p class="theUserName"><span class="postedBy">posted by: </span>{{blog.usertake.username}}</p>
-                    <img onclick="makeComment({{blog.id}})" class="commentBubble"  src="/img/two-speech-bubbles.png" alt="">
+                    <img onclick="makeComment({{blog.id}})" id="showCommentInputBox{{blog.id}}" class="commentBubble"  src="/img/two-speech-bubbles.png" alt="">
                     <label class="userComments"><span class="userCommentsLabel"><button class="vuCommentsBtn" onclick="vuComs({{blog.id}})">Comments({{comments.length}})</button></span><br>    
                     <input class="hide commentArea" id="theComment{{blog.id}}" placeholder="Replying to: {{blog.usertake.username}}" type="text">
                     </label>

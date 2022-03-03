@@ -604,7 +604,7 @@ footer{
     .timestamp{
         position: absolute;
         font-size: .7rem;
-        right: 11;
+        right: 5;
         bottom: 2;
         margin-top: -3%;
         color: rgb(32, 57, 182);

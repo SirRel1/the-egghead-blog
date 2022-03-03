@@ -1,5 +1,17 @@
 const post = document.querySelector('.textBox');
+const postDtail = document.querySelector('.blogDetails');
 const createBtn = document.querySelector('.createBtn')
+
+
+createBtn.disabled = true; //setting button state to disabled
+	// Disable button if no content
+	postDtail.addEventListener('keyup', () => {
+		if (document.querySelector('.blogDetails').value === '') {
+			createBtn.disabled = true; //button remains disabled
+		} else {
+			createBtn.disabled = false; //button is enabled
+		}
+	});
 
 const postDetails = () => {
     const post = document.querySelector('.textBox').value.trim();
